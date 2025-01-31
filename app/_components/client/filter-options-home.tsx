@@ -72,7 +72,7 @@ export default function FiltersOptions() {
   }, [searchParams]);
   const handleRemove = (lable: string) => {
     let value_;
-    let lable_ = lable === "state" ? "government" : lable === "minRate" ? "rate" : lable;
+    const lable_ = lable === "state" ? "government" : lable === "minRate" ? "rate" : lable;
     const condition = ["language", "language_level", "state"].includes(lable);
     if (condition) value_ = null;
     if (lable === "minRate") value_ = false;

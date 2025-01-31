@@ -92,7 +92,7 @@ export default function PostForm({
         setLoading(false);
         return;
       }
-    } catch (err) {
+    } catch {
       setValidationErr(unCountedMessage);
     }
     if (data.image !== "") {

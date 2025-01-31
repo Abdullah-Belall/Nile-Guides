@@ -55,9 +55,5 @@ async function resizeImage(file: File, maxWidth: number, maxHeight: number): Pro
   });
 }
 export const ResizeImage = async (file: File, maxWidth: number, maxHeight: number) => {
-  try {
-    return { done: true, file: await resizeImage(file, maxWidth + 1, maxHeight + 1) };
-  } catch (error) {
-    return { done: false, message: "Failed to resize the image." };
-  }
+  return { done: true, file: await resizeImage(file, maxWidth + 1, maxHeight + 1) };
 };

@@ -110,7 +110,8 @@ export default function UserPageDashbord({ data }: any) {
     <>
       <div
         onClick={() => {
-          setOpenRolesStatesOverLay(false), setOpenBandOverLay(false);
+          setOpenRolesStatesOverLay(false);
+          setOpenBandOverLay(false);
         }}
         className={`${
           openRolesStatesOverLay || openBandOverLay ? "" : "hidden"

@@ -11,16 +11,14 @@ export default function UpdatePostComponent({ params }: { params: { id: any } })
   useEffect(() => {
     async function GetData() {
       const params_ = await params;
-      try {
-        const response = await CLIENT_COLLECTOR_REQ(WORKER_POST_REQ, { id: params_.id });
-        if (response?.data?.id) {
-          setData(response.data);
-        } else {
-          if (response.status === 401) {
-            router.replace("/log-in");
-          }
+      const response = await CLIENT_COLLECTOR_REQ(WORKER_POST_REQ, { id: params_.id });
+      if (response?.data?.id) {
+        setData(response.data);
+      } else {
+        if (response.status === 401) {
+          router.replace("/log-in");
         }
-      } catch (err) {}
+      }
     }
     GetData();
   }, []);

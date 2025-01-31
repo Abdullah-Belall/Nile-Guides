@@ -3,7 +3,7 @@ import React, { createContext, useEffect, useReducer } from "react";
 import { CLIENT_COLLECTOR_REQ, PROFILE_REQ } from "./_utils/requests/client-requests-hub";
 import { UserPayloadInterface } from "./_utils/interfaces/main";
 
-let initialState = {
+const initialState = {
   first_name: null,
   last_name: null,
   email: null,

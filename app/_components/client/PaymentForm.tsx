@@ -69,7 +69,7 @@ const PaymentForm = ({ clientSecret, price, orderId }: any) => {
         confirmOrderInDatabase();
         setPaymentSuccess(true);
       }
-    } catch (err) {
+    } catch {
       setError("An unexpected error occurred");
     }
 

@@ -34,9 +34,7 @@ export default function ClientOrders({
   const checkDateStatus = (inputDate: any) => {
     const dateRegex = /^(\d{1,2}(\.\d{1,2})?)(AM|PM)\s(\d{1,2})-(\d{1,2})-(\d{4})$/;
     const match = inputDate.match(dateRegex);
-    if (!match) {
-      ("Invalid date format. Use format like '4AM 25-12-2024' or '5.5PM 1-2-2025'.");
-    }
+    // "Invalid date format. Use format like '4AM 25-12-2024' or '5.5PM 1-2-2025'."
     const [_, time, fraction, period, day, month, year] = match;
     let hours = parseInt(time);
     const minutes = fraction ? parseFloat(fraction) * 60 : 0;
@@ -137,7 +135,7 @@ export default function ClientOrders({
       </dl>
 
       <dl className="w-[50%] sm:w-full">
-        <dt className="text-sm font-medium text-seclight text-nowrap">Guide's decision:</dt>
+        <dt className="text-sm font-medium text-seclight text-nowrap">Guide&lsquo;s decision:</dt>
         {guideOpinin === "pending" && (
           <dd className="me-2 mt-1.5 inline-flex shrink-0 items-center rounded px-2.5 py-0.5 text-xs font-medium bg-yellow-900 text-yellow-300">
             <TbProgressHelp className="mr-1" />

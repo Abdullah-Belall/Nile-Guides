@@ -97,7 +97,7 @@ export default function OrderDashboard({
       </dl>
 
       <dl className="w-[50%] sm:w-full">
-        <dt className="text-sm font-medium text-seclight text-nowrap">Guide's decision:</dt>
+        <dt className="text-sm font-medium text-seclight text-nowrap">Guide&lsquo;s decision:</dt>
         {guideOpinin === "pending" && (
           <dd className="me-2 mt-1.5 inline-flex shrink-0 items-center rounded px-2.5 py-0.5 text-xs font-medium bg-yellow-900 text-yellow-300">
             <TbProgressHelp className="mr-1" />

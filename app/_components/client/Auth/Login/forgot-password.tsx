@@ -200,7 +200,7 @@ export default function ForgotPasswordComponent() {
                       skipStep ? "" : "hidden"
                     } flex flex-row items-center justify-center text-center text-xs mt-2 font-medium space-x-1 text-anotherLight`}
                   >
-                    <p>Didn't recieve code?</p>{" "}
+                    <p>Didn&lsquo;t recieve code?</p>{" "}
                     <button
                       onClick={(e) => ResendCode(e)}
                       className="outline-0 flex flex-row items-center text-anotherLight underline hover:no-underline duration-300"

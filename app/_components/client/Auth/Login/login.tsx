@@ -231,7 +231,7 @@ export default function LoginComponent() {
                 Forgot password
               </Link>
               <p className="text-sm text-mainlight mt-6 ms-2">
-                don't have a account?{" "}
+                don&lsquo;t have a account?{" "}
                 <Link
                   href="/sign-up"
                   className="duration-300 text-anotherLight hover:text-mainlight underline font-semibold hover:no-underline ml-1"

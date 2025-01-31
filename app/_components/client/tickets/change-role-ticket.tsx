@@ -59,7 +59,7 @@ export default function ChangeRoleTicket() {
         setLoading(false);
         return;
       }
-    } catch (error) {
+    } catch {
       setVaildationMessage("There is an error, please try again later.");
     }
     if (cardValue !== "") {
@@ -128,6 +128,7 @@ export default function ChangeRoleTicket() {
       setVaildationMessage(saveFrontResponse.message);
       return;
     }
+    // eslint-disable-next-line prefer-const
     image1 = saveFrontResponse.filename;
     formData.delete("image");
     formData.append("image", backCardEle.current.files[0]);
@@ -140,6 +141,7 @@ export default function ChangeRoleTicket() {
       setVaildationMessage(saveBackResponse.message);
       return;
     }
+    // eslint-disable-next-line prefer-const
     image2 = saveBackResponse.filename;
     const response = await CLIENT_COLLECTOR_REQ(MAKE_TICKET_REQ, {
       type: `clients`,

@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export async function DELETE(Req: Request, { params }: any) {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
   const access_token = (await cookies()).get("access_token")?.value;
-  let unWrapParams = await params;
+  const unWrapParams = await params;
   if (!access_token) NextResponse.json({ error: { message: "Unauthorized." } }, { status: 404 });
   try {
     const backendResponse = await fetch(

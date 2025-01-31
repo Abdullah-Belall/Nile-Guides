@@ -5,7 +5,7 @@ export async function POST(req: Request, { params }: { params: { type: "clients"
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
   const access_token = (await cookies()).get("access_token")?.value;
 
-  let unWrapParams = await params;
+  const unWrapParams = await params;
   if (!access_token) NextResponse.json({ error: { message: "Unauthorized." } }, { status: 404 });
   try {
     const body = await req.json();

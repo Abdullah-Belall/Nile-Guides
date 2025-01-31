@@ -158,7 +158,7 @@ export default function EditProfileComponent({ params }: any) {
           return;
         }
       }
-    } catch (error) {
+    } catch {
       setVaildationMessage("Failed to validate the image dimensions.");
       setLoading(false);
       return;
@@ -179,7 +179,7 @@ export default function EditProfileComponent({ params }: any) {
     }
   }
 
-  const handleSend = async (e: any, file_: any) => {
+  const handleSend = async (e: any) => {
     e.preventDefault();
     if (loading) return;
     const condition =
@@ -254,7 +254,7 @@ export default function EditProfileComponent({ params }: any) {
             return;
           }
         }
-      } catch (error) {
+      } catch {
         setVaildationMessage("Failed to validate the image dimensions.");
         setLoading(false);
         return;
