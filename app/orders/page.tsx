@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     description:
       "View and manage your tour bookings on Nile Guides. Track your reservations and access booking details.",
     type: "website",
-    url: BaseWebsiteLink + "/orders", // Replace with your actual domain
+    url: BaseWebsiteLink + "/orders",
     images: [
       {
-        url: "/logo.ico", // Replace with your actual OG image URL
+        url: "/logo.ico",
         width: 1200,
         height: 630,
         alt: "My Orders - Nile Guides",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "My Orders | Nile Guides",
     description:
       "View and manage your tour bookings on Nile Guides. Track your reservations and access booking details.",
-    images: ["/logo.ico"], // Replace with your actual Twitter image URL
+    images: ["/logo.ico"],
   },
 };
 

@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     description:
       "Verify your email address to complete your registration on Nile Guides. Enter the verification code sent to your email to confirm your account.",
     type: "website",
-    url: BaseWebsiteLink + "/sign-up", // Replace with your actual domain
+    url: BaseWebsiteLink + "/sign-up",
     images: [
       {
-        url: "/logo.ico", // Replace with your actual OG image URL
+        url: "/logo.ico",
         width: 1200,
         height: 630,
         alt: "Verify Email - Nile Guides",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Verify Email | Nile Guides",
     description:
       "Verify your email address to complete your registration on Nile Guides. Enter the verification code sent to your email to confirm your account.",
-    images: ["/logo.ico"], // Replace with your actual Twitter image URL
+    images: ["/logo.ico"],
   },
 };
 export default function page() {

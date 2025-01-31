@@ -11,7 +11,7 @@ import {
   UpdateUserDataInterface,
   VerifyEmailInterface,
 } from "../interfaces/main";
-const BASE_URL = "https://localhost:3000/api";
+const BASE_URL = "http://localhost:3000/api";
 //? PUBLIC REQUESTS
 const GET_POST_REQ = async (id: string): Promise<any> => {
   try {
@@ -430,12 +430,10 @@ const UPDATE_POST_REQ = async ({
 }): Promise<ReqResInterface> => {
   try {
     const response: any = await axios.patch(`${BASE_URL}/workers/update-post/${id}`, data);
-    console.log("hereResponse", response);
     return response?.data?.done
       ? { done: true }
       : { done: false, message: unCountedMessage, status: response.status };
   } catch (error: any) {
-    console.log("hereerror", error);
     let message = unCountedMessage;
     if (error?.response?.status !== 400) {
       message = error?.response?.data?.error?.message;

@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     description:
       "Reset your password for your Nile Guides account. Enter your new password to regain access to your account securely.",
     type: "website",
-    url: BaseWebsiteLink + "/profile/new-pass", // Replace with your actual domain
+    url: BaseWebsiteLink + "/profile/new-pass",
     images: [
       {
-        url: "/logo.ico", // Replace with your actual OG image URL
+        url: "/logo.ico",
         width: 1200,
         height: 630,
         alt: "Reset Password - Nile Guides",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Reset Password | Nile Guides",
     description:
       "Reset your password for your Nile Guides account. Enter your new password to regain access to your account securely.",
-    images: ["/logo.ico"], // Replace with your actual Twitter image URL
+    images: ["/logo.ico"],
   },
 };
 export default function NewPassword() {

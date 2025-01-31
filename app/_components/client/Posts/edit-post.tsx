@@ -13,7 +13,6 @@ export default function UpdatePostComponent({ params }: { params: { id: any } })
       const params_ = await params;
       try {
         const response = await CLIENT_COLLECTOR_REQ(WORKER_POST_REQ, { id: params_.id });
-        console.log(response);
         if (response?.data?.id) {
           setData(response.data);
         } else {
@@ -21,9 +20,7 @@ export default function UpdatePostComponent({ params }: { params: { id: any } })
             router.replace("/log-in");
           }
         }
-      } catch (err) {
-        console.error(err);
-      }
+      } catch (err) {}
     }
     GetData();
   }, []);

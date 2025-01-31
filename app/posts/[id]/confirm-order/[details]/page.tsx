@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     description:
       "Complete your tour booking on Nile Guides. Confirm your reservation and proceed with secure payment options.",
     type: "website",
-    url: BaseWebsiteLink, // Replace with your actual domain
+    url: BaseWebsiteLink,
     images: [
       {
-        url: "/logo.ico", // Replace with your actual OG image URL
+        url: "/logo.ico",
         width: 1200,
         height: 630,
         alt: "Confirm Booking - Nile Guides",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Confirm Booking | Nile Guides",
     description:
       "Complete your tour booking on Nile Guides. Confirm your reservation and proceed with secure payment options.",
-    images: ["/logo.ico"], // Replace with your actual Twitter image URL
+    images: ["/logo.ico"],
   },
 };
 export default function ConfirmOrder({ params }: any) {

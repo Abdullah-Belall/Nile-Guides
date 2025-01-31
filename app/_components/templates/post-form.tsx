@@ -184,8 +184,6 @@ export default function PostForm({
         setLoading(false);
         return;
       }
-      console.log("this should apper");
-      console.log(saveImgResponse.filename);
       cloneData.image = saveImgResponse.filename;
     }
     const response =

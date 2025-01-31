@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     description:
       "Book your favorite tours with Nile Guides. Choose from a variety of tours and experiences offered by professional guides.",
     type: "website",
-    url: BaseWebsiteLink, // Replace with your actual domain
+    url: BaseWebsiteLink,
     images: [
       {
-        url: "/logo.ico", // Replace with your actual OG image URL
+        url: "/logo.ico",
         width: 1200,
         height: 630,
         alt: "Book a Tour - Nile Guides",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Book a Tour | Nile Guides",
     description:
       "Book your favorite tours with Nile Guides. Choose from a variety of tours and experiences offered by professional guides.",
-    images: ["/logo.ico"], // Replace with your actual Twitter image URL
+    images: ["/logo.ico"],
   },
 };
 export default function OrderNow() {

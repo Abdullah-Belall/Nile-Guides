@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     description:
       "Edit and update your post on Nile Guides. Modify details, images, and descriptions to keep your tours and services up-to-date.",
     type: "website",
-    url: BaseWebsiteLink + "/posts", // Replace with your actual domain
+    url: BaseWebsiteLink + "/posts",
     images: [
       {
-        url: "/logo.ico", // Replace with your actual OG image URL
+        url: "/logo.ico",
         width: 1200,
         height: 630,
         alt: "Update Post - Nile Guides",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Update Post | Nile Guides",
     description:
       "Edit and update your post on Nile Guides. Modify details, images, and descriptions to keep your tours and services up-to-date.",
-    images: ["/logo.ico"], // Replace with your actual Twitter image URL
+    images: ["/logo.ico"],
   },
 };
 export default function UpdatePost({ params }: { params: { id: any } }) {

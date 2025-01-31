@@ -32,7 +32,7 @@ export default function WorkerService({
     const dateRegex = /^(\d{1,2}(\.\d{1,2})?)(AM|PM)\s(\d{1,2})-(\d{1,2})-(\d{4})$/;
     const match = inputDate.match(dateRegex);
     if (!match) {
-      console.log("Invalid date format. Use format like '4AM 25-12-2024' or '5.5PM 1-2-2025'.");
+      // "Invalid date format. Use format like '4AM 25-12-2024' or '5.5PM 1-2-2025'."
     }
     const [_, time, fraction, period, day, month, year] = match;
     let hours = parseInt(time);

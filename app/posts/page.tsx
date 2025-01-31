@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "My Posts | Nile Guides",
     description:
       "View and manage your posts on Nile Guides. Track the performance of your tours and services, and make updates as needed.",
-    images: ["/logo.ico"], // Replace with your actual Twitter image URL
+    images: ["/logo.ico"],
   },
 };
 export default async function Posts() {

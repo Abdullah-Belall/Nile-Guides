@@ -64,14 +64,12 @@ const PaymentForm = ({ clientSecret, price, orderId }: any) => {
       });
 
       if (error) {
-        console.error("Payment Error:", error.message);
         setError(error.message || "An unexpected error occurred");
       } else if (paymentIntent?.status === "succeeded") {
         confirmOrderInDatabase();
         setPaymentSuccess(true);
       }
     } catch (err) {
-      console.error("Error:", err);
       setError("An unexpected error occurred");
     }
 

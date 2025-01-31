@@ -60,7 +60,6 @@ export default function ChangeRoleTicket() {
         return;
       }
     } catch (error) {
-      console.error(error);
       setVaildationMessage("There is an error, please try again later.");
     }
     if (cardValue !== "") {

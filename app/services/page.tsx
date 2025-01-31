@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     description:
       "Manage and view the services you have provided to clients on Nile Guides. Track your bookings and improve your offerings.",
     type: "website",
-    url: BaseWebsiteLink + "/services", // Replace with your actual domain
+    url: BaseWebsiteLink + "/services",
     images: [
       {
-        url: "/logo.ico", // Replace with your actual OG image URL
+        url: "/logo.ico",
         width: 1200,
         height: 630,
         alt: "My Services - Nile Guides",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "My Services | Nile Guides",
     description:
       "Manage and view the services you have provided to clients on Nile Guides. Track your bookings and improve your offerings.",
-    images: ["/logo.ico"], // Replace with your actual Twitter image URL
+    images: ["/logo.ico"],
   },
 };
 

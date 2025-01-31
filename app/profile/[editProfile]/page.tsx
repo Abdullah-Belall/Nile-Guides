@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     description:
       "Update your personal information on Nile Guides, including your name, gender, age, and other details. Keep your profile up-to-date for a better experience.",
     type: "website",
-    url: BaseWebsiteLink + "/profile", // Replace with your actual domain
+    url: BaseWebsiteLink + "/profile",
     images: [
       {
-        url: "/logo.ico", // Replace with your actual OG image URL
+        url: "/logo.ico",
         width: 1200,
         height: 630,
         alt: "Edit Profile - Nile Guides",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Edit Profile | Nile Guides",
     description:
       "Update your personal information on Nile Guides, including your name, gender, age, and other details. Keep your profile up-to-date for a better experience.",
-    images: ["/logo.ico"], // Replace with your actual Twitter image URL
+    images: ["/logo.ico"],
   },
 };
 export default function EditProfile({ params }: any) {
