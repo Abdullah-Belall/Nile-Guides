@@ -3,7 +3,7 @@ import axios from "axios";
 import { ProfileInterface, RefreshTokenInterface, unCountedMessage } from "../interfaces/main";
 import { cookies } from "next/headers";
 
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = "https://nile-guides.vercel.app/api";
 //? ALLOWED FOR ANY USER (NO NEED FOR SERVER_COLLECTOR_REQ())
 const HOME_POSTS_SERVER_REQ = async (params?: {
   page?: string;
