@@ -14,13 +14,12 @@ import { Metadata } from "next";
 import { unCountedMessage } from "../_utils/interfaces/main";
 import { BaseWebsiteLink } from "../base";
 
-let role: any;
-const ProfileResponse = await SERVER_COLLECTOR_REQ(PROFILE_SERVER_REQ);
-if (ProfileResponse.done) {
-  role = ProfileResponse.data.role;
-}
-
 export async function generateMetadata(): Promise<Metadata> {
+  let role: any;
+  const ProfileResponse = await SERVER_COLLECTOR_REQ(PROFILE_SERVER_REQ);
+  if (ProfileResponse.done) {
+    role = ProfileResponse.data.role;
+  }
   const user = await ProfileResponse?.data;
   const roleTitle = role === "client" ? "Client" : role === "worker" ? "Tour Guide" : "Admin";
 
@@ -59,6 +58,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Profile() {
+  let role: any;
+  const ProfileResponse = await SERVER_COLLECTOR_REQ(PROFILE_SERVER_REQ);
+  if (ProfileResponse.done) {
+    role = ProfileResponse.data.role;
+  }
   let data;
   const AllowedRoles = ["client", "worker"];
   if (AllowedRoles.includes(role)) {
