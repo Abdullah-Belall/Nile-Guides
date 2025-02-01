@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "localhost",
+        hostname: "nile-guides-backend-production",
       },
     ],
   },
