@@ -1,1 +1,1 @@
-export const BaseWebsiteLink = "https://nile-guides.vercel.app/";
+export const BaseWebsiteLink = "https://nile-guides.vercel.app";
