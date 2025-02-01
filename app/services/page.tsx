@@ -44,7 +44,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Services({ searchParams }: { searchParams: { page: string } }) {
+export default async function Services({
+  searchParams,
+}: {
+  searchParams: Promise<{ page: string }>;
+}) {
   const Unwrap = await searchParams;
   const response = await SERVER_COLLECTOR_REQ(WORKERS_SERVICES_SERVER_REQ, {
     params: { page: Unwrap.page },

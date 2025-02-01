@@ -4,7 +4,7 @@ import { CLIENT_COLLECTOR_REQ, WORKER_POST_REQ } from "@/app/_utils/requests/cli
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ImSpinner } from "react-icons/im";
-export default function UpdatePostComponent({ params }: { params: { id: any } }) {
+export default function UpdatePostComponent({ params }: { params: Promise<{ id: any }> }) {
   const router = useRouter();
   const [data, setData] = useState<any>();
 

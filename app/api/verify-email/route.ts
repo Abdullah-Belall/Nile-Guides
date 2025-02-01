@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-
   try {
     const body = await req.json();
     const backendResponse = await fetch(
@@ -20,10 +18,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: data }, { status: backendResponse.status });
     }
     return NextResponse.json(data, { status: backendResponse.status });
-  } catch (error: any) {
-    return NextResponse.json(
-      { error: { message: error?.message || "Internal Server Error" } },
-      { status: 500 }
-    );
+  } catch (error: unknown) {
+    let errorMessage = "Internal Server Error";
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    return NextResponse.json({ error: { message: errorMessage } }, { status: 500 });
   }
 }

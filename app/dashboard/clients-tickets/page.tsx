@@ -11,10 +11,10 @@ import {
 export default async function ClientsTickets({
   searchParams,
 }: {
-  searchParams: { page: number; status: string };
+  searchParams: Promise<{ page: number; status: string }>;
 }) {
   const response = await SERVER_COLLECTOR_REQ(DASHBOARD_USERS_TICKETS_SERVER_REQ, {
-    params: searchParams,
+    params: await searchParams,
     role: "clients",
   });
   if (response.done) {

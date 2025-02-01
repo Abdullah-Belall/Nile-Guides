@@ -10,9 +10,9 @@ import {
 export default async function Users({
   searchParams,
 }: {
-  searchParams: { type: string; gender: string; minAge: number };
+  searchParams: Promise<{ type: string; gender: string; minAge: number }>;
 }) {
-  const type = searchParams.type || "clients";
+  const type = (await searchParams).type || "clients";
   const response = await SERVER_COLLECTOR_REQ(DASHBOARD_USERS_SERVER_REQ, {
     params: { ...searchParams, type },
   });

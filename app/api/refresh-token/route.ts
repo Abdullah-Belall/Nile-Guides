@@ -2,7 +2,6 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
   const cookiesStore = await cookies();
   const refresh_token = cookiesStore.get("refresh_token")?.value;
   try {
@@ -20,10 +19,11 @@ export async function GET() {
       return NextResponse.json({ error: data }, { status: backendResponse.status });
     }
     return NextResponse.json(data, { status: backendResponse.status });
-  } catch (error: any) {
-    return NextResponse.json(
-      { error: { message: error?.message || "Internal Server Error" } },
-      { status: 500 }
-    );
+  } catch (error: unknown) {
+    let errorMessage = "Internal Server Error";
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    return NextResponse.json({ error: { message: errorMessage } }, { status: 500 });
   }
 }

@@ -9,7 +9,7 @@ import {
 } from "@/app/_utils/requests/server-requests-hub";
 import { unCountedMessage } from "@/app/_utils/interfaces/main";
 import Reduirect from "@/app/_components/client/rediruct";
-export default async function PostPage({ params }: { params: { email: string } }) {
+export default async function PostPage({ params }: { params: Promise<{ email: string }> }) {
   const unWrap = await params;
   const user_email = unWrap?.email?.split("%40").join("@");
   const userDataResponse = await SERVER_COLLECTOR_REQ(DASHBOARD_ONE_USER_SERVER_REQ, {

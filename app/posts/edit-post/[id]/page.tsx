@@ -30,6 +30,6 @@ export const metadata: Metadata = {
     images: ["/logo.ico"],
   },
 };
-export default function UpdatePost({ params }: { params: { id: any } }) {
+export default function UpdatePost({ params }: { params: Promise<{ id: any }> }) {
   return <UpdatePostComponent params={params} />;
 }

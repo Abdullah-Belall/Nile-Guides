@@ -1,33 +1,30 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-
-export async function GET(_: Request, context: { params: { id: string } }) {
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+export async function GET(_request: Request, context: { params: Promise<{ id: string }> }) {
+  const { id } = await context.params;
   const access_token = (await cookies()).get("access_token")?.value;
-  if (!access_token)
+  if (!access_token) {
     return NextResponse.json({ error: { message: "Unauthorized." } }, { status: 404 });
-
-  const unWrappedParams = context.params;
-
+  }
   try {
-    const backendResponse = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/dashboard/business/${unWrappedParams.id}`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${access_token}`,
-        },
-      }
-    );
+    const backendResponse = await fetch(`https://localhost:5000/api/dashboard/business/${id}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
     const data = await backendResponse.json();
+
     if (!backendResponse.ok) {
       return NextResponse.json({ error: data }, { status: backendResponse.status });
     }
+
     return NextResponse.json(data, { status: backendResponse.status });
-  } catch (error: any) {
-    return NextResponse.json(
-      { error: { message: error?.message || "Internal Server Error" } },
-      { status: 500 }
-    );
+  } catch (error: unknown) {
+    let errorMessage = "Internal Server Error";
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    return NextResponse.json({ error: { message: errorMessage } }, { status: 500 });
   }
 }

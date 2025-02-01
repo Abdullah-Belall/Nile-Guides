@@ -13,7 +13,6 @@ const initialState = {
   gender: null,
   state: null,
 };
-
 const authReducer = (
   state: UserPayloadInterface,
   action: { type: "LOGIN" | "LOGOUT"; payload?: UserPayloadInterface }

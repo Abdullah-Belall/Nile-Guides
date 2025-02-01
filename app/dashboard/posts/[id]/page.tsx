@@ -6,7 +6,7 @@ import {
   SERVER_COLLECTOR_REQ,
 } from "@/app/_utils/requests/server-requests-hub";
 
-export default async function DashboardPost({ params }: { params: { id: string } }) {
+export default async function DashboardPost({ params }: { params: Promise<{ id: string }> }) {
   const unWrap = await params;
   const response = await SERVER_COLLECTOR_REQ(DASHBOARD_ONE_POST_SERVER_REQ, { id: unWrap.id });
   if (response.done) {

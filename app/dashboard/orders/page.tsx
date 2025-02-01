@@ -7,7 +7,11 @@ import {
   SERVER_COLLECTOR_REQ,
 } from "@/app/_utils/requests/server-requests-hub";
 
-export default async function Services({ searchParams }: { searchParams: { page: string } }) {
+export default async function Services({
+  searchParams,
+}: {
+  searchParams: Promise<{ page: string }>;
+}) {
   const Unwrap = await searchParams;
 
   const response = await SERVER_COLLECTOR_REQ(DASHBOARD_ORDERS_SERVER_REQ, {

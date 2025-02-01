@@ -48,8 +48,8 @@ export default async function UsersTickets({
   params,
   searchParams,
 }: {
-  params: { role: "client" | "worker" };
-  searchParams: { page: number; status: string };
+  params: Promise<{ role: "client" | "worker" }>;
+  searchParams: Promise<{ page: number; status: string }>;
 }) {
   const unWrap = await params;
   const response = await SERVER_COLLECTOR_REQ(TICKETS_SERVER_REQ, {

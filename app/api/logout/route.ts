@@ -2,8 +2,6 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 export async function POST() {
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-
   const access_token = (await cookies()).get("access_token")?.value;
   if (!access_token)
     return NextResponse.json({ error: { message: "Unauthorized." } }, { status: 401 });
@@ -21,10 +19,11 @@ export async function POST() {
       return NextResponse.json({ error: data }, { status: backendResponse.status });
     if (backendCookies) response.headers.append("Set-Cookie", backendCookies);
     return response;
-  } catch (error: any) {
-    return NextResponse.json(
-      { error: { message: error?.message || "Internal Server Error" } },
-      { status: 500 }
-    );
+  } catch (error: unknown) {
+    let errorMessage = "Internal Server Error";
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    return NextResponse.json({ error: { message: errorMessage } }, { status: 500 });
   }
 }

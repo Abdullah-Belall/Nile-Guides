@@ -11,7 +11,7 @@ import {
 export default async function WorkersBusinessDashboard({
   searchParams,
 }: {
-  searchParams: { status: string; page: number };
+  searchParams: Promise<{ status: string; page: number }>;
 }) {
   const params = await searchParams;
   const response = await SERVER_COLLECTOR_REQ(DASHBOARD_POSTS_SERVER_REQ, {
