@@ -11,7 +11,7 @@ import {
   UpdateUserDataInterface,
   VerifyEmailInterface,
 } from "../interfaces/main";
-const BASE_URL = "https://nile-guides.vercel.app/api";
+const BASE_URL = "https://nile-guides-backend-production.up.railway.app/api";
 //? PUBLIC REQUESTS
 const GET_POST_REQ = async (id: string): Promise<any> => {
   try {
